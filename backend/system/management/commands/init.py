@@ -9,7 +9,7 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     """
-    项目初始化命令: python manage.py init
+    Команда инициализации проекта: python manage.py init
     """
 
     def add_arguments(self, parser):
@@ -25,7 +25,7 @@ class Command(BaseCommand):
             reset = True
         if isinstance(options.get('n'), list) or isinstance(options.get('N'), list):
             reset = False
-        print(f"正在准备初始化数据，{'如有初始化数据，将会不做操作跳过' if not reset else '初始数据将会先删除后新增'}...")
+        print(f"Подготовка к инициализации данных. {'Если данные уже инициализированы, они будут пропущены.' if not reset else 'Существующие данные будут удалены перед добавлением новых.'}...")
 
         for app in settings.INSTALLED_APPS:
 
@@ -36,4 +36,4 @@ main(reset={reset})
                 """)
             except ModuleNotFoundError:
                 pass
-        print("初始化数据完成！")
+        print("Инициализация данных завершена!")

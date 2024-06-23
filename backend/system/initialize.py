@@ -16,19 +16,19 @@ class Initialize(CoreInitialize):
 
     def init_dept(self):
         """
-        初始化部门信息
+        Инициализация информации о департаментах
         """
         self.dept_data = [
             {
                 "id": 1,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "parent_id": None,
                 "remark": None,
-                "name": "北京公司",
+                "name": "Пекинская компания",
                 "sort": 1,
                 "owner": None,
                 "phone": "13244724433",
@@ -37,14 +37,14 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 2,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "parent_id": None,
                 "remark": None,
-                "name": "大连公司",
+                "name": "Даляньская компания",
                 "sort": 2,
                 "owner": None,
                 "phone": "13244724433",
@@ -53,14 +53,14 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 3,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "parent_id": 1,
                 "remark": None,
-                "name": "IT部门",
+                "name": "Отдел информационных технологий",
                 "sort": 1,
                 "owner": None,
                 "phone": "13244724433",
@@ -69,14 +69,14 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 4,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "parent_id": 1,
                 "remark": None,
-                "name": "财务部门",
+                "name": "Финансовый отдел",
                 "sort": 2,
                 "owner": None,
                 "phone": "13244724433",
@@ -85,14 +85,14 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 5,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "parent_id": 2,
                 "remark": None,
-                "name": "IT部门",
+                "name": "Отдел информационных технологий",
                 "sort": 1,
                 "owner": None,
                 "phone": "13244724433",
@@ -101,14 +101,14 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 6,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "parent_id": 2,
                 "remark": None,
-                "name": "财务部门",
+                "name": "Финансовый отдел",
                 "sort": 2,
                 "owner": None,
                 "phone": "13244724433",
@@ -116,16 +116,16 @@ class Initialize(CoreInitialize):
                 "status": 1,
             }
         ]
-        self.save(Dept, self.dept_data, "部门信息")
+        self.save(Dept, self.dept_data, "Отраслевая информация")
 
     def init_menu(self):
         """
-        初始化菜单表
+        Инициализация таблицы меню
         """
         self.menu_data = [
             {
                 "id": 1,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -133,7 +133,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 2,
                 "icon": "ion:settings-outline",
-                "title": "系统管理",
+                "title": "Управление системой",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -147,7 +147,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 2,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -155,7 +155,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 3,
                 "icon": "ant-design:appstore-outlined",
-                "title": "系统工具",
+                "title": "Системные инструменты",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -169,7 +169,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 3,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -177,7 +177,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 4,
                 "icon": "ant-design:code-filled",
-                "title": "日志管理",
+                "title": "Управление журналом",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -191,7 +191,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 4,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -199,7 +199,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 1,
                 "icon": "ant-design:bars-outlined",
-                "title": "菜单管理",
+                "title": "Управление меню",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -213,7 +213,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 5,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -221,7 +221,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 2,
                 "icon": "ant-design:contacts-outlined",
-                "title": "岗位管理",
+                "title": "Управление должностью",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -235,7 +235,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 6,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -243,7 +243,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 3,
                 "icon": "ant-design:user-outlined",
-                "title": "用户管理",
+                "title": "Управление пользователями",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -257,7 +257,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 7,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -265,7 +265,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 4,
                 "icon": "ant-design:project-outlined",
-                "title": "部门管理",
+                "title": "Секторальное управление",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -279,7 +279,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 8,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -287,7 +287,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 5,
                 "icon": "ant-design:team-outlined",
-                "title": "角色管理",
+                "title": "Управление ролями",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -301,7 +301,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 9,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -309,7 +309,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 2,
                 "sort": 1,
                 "icon": "ant-design:database-outlined",
-                "title": "数据字典",
+                "title": "База данных",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -323,7 +323,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 10,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -331,7 +331,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 2,
                 "sort": 2,
                 "icon": "ant-design:database-filled",
-                "title": "分类字典",
+                "title": "База классификатор",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -345,7 +345,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 11,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -353,7 +353,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 2,
                 "sort": 3,
                 "icon": "ant-design:clock-circle-outlined",
-                "title": "定时任务",
+                "title": "Задача с заданным временем",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -367,7 +367,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 12,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -375,7 +375,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 2,
                 "sort": 4,
                 "icon": "ant-design:folder-open-outlined",
-                "title": "文件管理",
+                "title": "Управление документами",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -389,7 +389,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 13,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -397,7 +397,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 3,
                 "sort": 1,
                 "icon": "ant-design:book-outlined",
-                "title": "登录日志",
+                "title": "Журнал регистрации",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -411,7 +411,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 14,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -419,7 +419,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 3,
                 "sort": 2,
                 "icon": "ant-design:book-outlined",
-                "title": "操作日志",
+                "title": "Оперативный журнал",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -433,7 +433,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 15,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -441,7 +441,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 3,
                 "sort": 3,
                 "icon": "ant-design:book-outlined",
-                "title": "任务日志",
+                "title": "Журнал регистрации",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -455,7 +455,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 16,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -477,7 +477,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 17,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -485,7 +485,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 16,
                 "sort": 1,
                 "icon": "bx:bx-home",
-                "title": "分析页",
+                "title": "Страница анализа",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -499,7 +499,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 18,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -507,7 +507,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 16,
                 "sort": 2,
                 "icon": "bx:bx-home",
-                "title": "工作台",
+                "title": "Рабочие платформы",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -521,7 +521,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 19,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -529,7 +529,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 6,
                 "icon": "ant-design:setting-outlined",
-                "title": "个人设置",
+                "title": "Персональные настройки",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -543,7 +543,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 20,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -551,7 +551,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 5,
                 "icon": "ant-design:bar-chart-outlined",
-                "title": "图表演示",
+                "title": "Демо-версия диаграммы",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -565,7 +565,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 21,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -573,7 +573,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 20,
                 "sort": 1,
                 "icon": "ant-design:environment-outlined",
-                "title": "百度地图",
+                "title": "Карта Baidu",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -587,7 +587,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 22,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -595,7 +595,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 20,
                 "sort": 2,
                 "icon": "ant-design:environment-outlined",
-                "title": "高德地图",
+                "title": "Gao De Map (китайская версия GPS)",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -609,7 +609,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 23,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -631,7 +631,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 24,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -639,7 +639,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 7,
                 "icon": "ant-design:audit-outlined",
-                "title": "项目演示",
+                "title": "Демоверсия проекта",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -653,7 +653,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 25,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -661,7 +661,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 6,
                 "icon": "ant-design:fund-projection-screen-outlined",
-                "title": "运维管理",
+                "title": "Управление операциями (ОМ)",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -675,7 +675,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 26,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -683,7 +683,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 25,
                 "sort": 1,
                 "icon": "ant-design:monitor-outlined",
-                "title": "服务监控",
+                "title": "Мониторинг услуг",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -697,7 +697,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 29,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -705,7 +705,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 8,
                 "icon": "ant-design:border-outlined",
-                "title": "代码生成",
+                "title": "Генерация кода",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -719,7 +719,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 30,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -727,7 +727,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 29,
                 "sort": 1,
                 "icon": "ant-design:book-outlined",
-                "title": "代码模板",
+                "title": "Шаблон кода",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,
@@ -741,7 +741,7 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 33,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "creator_id": 1,
                 "update_datetime": datetime.datetime.now(),
@@ -749,7 +749,7 @@ class Initialize(CoreInitialize):
                 "parent_id": None,
                 "sort": 8,
                 "icon": "ant-design:one-to-one-outlined",
-                "title": "生成项目",
+                "title": "Создать проект",
                 "permission": None,
                 "is_ext": 0,
                 "type": 0,
@@ -762,21 +762,21 @@ class Initialize(CoreInitialize):
                 "hide_menu": 0,
             },
         ]
-        self.save(Menu, self.menu_data, "菜单表")
+        self.save(Menu, self.menu_data, "Меню")
 
     def init_menu_button(self):
         """
-        初始化菜单按钮表
+        Инициализация таблицы кнопок меню
         """
         self.menu_button_data = [
             {
                 "id": 1,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "post:add",
                 "api": "/api/system/post",
                 "method": 1,
@@ -787,11 +787,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 2,
                 "remark": "",
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "post:delete",
                 "api": "/api/system/post/{post_id}",
                 "method": 3,
@@ -802,11 +802,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 3,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "编辑",
+                "name": "Обновить",
                 "code": "post:update",
                 "api": "/api/system/post/{post_id}",
                 "method": 2,
@@ -817,11 +817,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 4,
                 "remark": "",
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "post:search",
                 "api": "/api/system/post",
                 "method": 0,
@@ -832,11 +832,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 5,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "menu:add",
                 "api": "/api/system/menu",
                 "method": 1,
@@ -847,11 +847,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 6,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "menu:delete",
                 "api": "/api/system/menu/{menu_id}",
                 "method": 3,
@@ -862,11 +862,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 7,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "编辑",
+                "name": "Обновить",
                 "code": "menu:update",
                 "api": "/api/system/menu/{menu_id}",
                 "method": 2,
@@ -877,11 +877,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 8,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "menu:search",
                 "api": "/api/system/menu",
                 "method": 0,
@@ -892,11 +892,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 9,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "按钮查询",
+                "name": "Добавить",
                 "code": "button:add",
                 "api": "/api/system/menu_button",
                 "method": 0,
@@ -907,11 +907,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 10,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 7,
-                "name": "按钮编辑",
+                "name": "Обновить",
                 "code": "button:update",
                 "api": "/api/system/menu_button/{menu_button_id}",
                 "method": 2,
@@ -922,11 +922,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 11,
                 "remark": "",
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 5,
-                "name": "按钮新增",
+                "name": "Добавить",
                 "code": "button:add",
                 "api": "/api/system/menu_button",
                 "method": 1,
@@ -937,11 +937,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 12,
                 "remark": "",
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 6,
-                "name": "按钮删除",
+                "name": "Удалить",
                 "code": "button:delete",
                 "api": "/api/system/menu_button/{menu_button}",
                 "method": 3,
@@ -952,11 +952,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 13,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "user:add",
                 "api": "/api/system/user",
                 "method": 1,
@@ -967,11 +967,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 14,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "user:delete",
                 "api": "/api/system/user/{user_id}",
                 "method": 3,
@@ -982,11 +982,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 15,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "修改",
+                "name": "Изменить",
                 "code": "user:update",
                 "api": "/api/system/user/{user_id}",
                 "method": 2,
@@ -997,11 +997,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 16,
                 "remark": "",
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "user:search",
                 "api": "/api/system/user",
                 "method": 0,
@@ -1012,11 +1012,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 17,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "dept:add",
                 "api": "/api/system/dept",
                 "method": 1,
@@ -1027,11 +1027,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 18,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "dept:delete",
                 "api": "/api/system/dept/{dept_id}",
                 "method": 3,
@@ -1042,11 +1042,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 19,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "修改",
+                "name": "Изменить",
                 "code": "dept:update",
                 "api": "/api/system/dept/{dept_id}",
                 "method": 2,
@@ -1057,11 +1057,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 20,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "dept:search",
                 "api": "/api/system/dept",
                 "method": 0,
@@ -1072,11 +1072,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 21,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "role:add",
                 "api": "/api/system/role",
                 "method": 1,
@@ -1087,11 +1087,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 22,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "role:delete",
                 "api": "/api/system/role/{role_id}",
                 "method": 3,
@@ -1102,11 +1102,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 23,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "修改",
+                "name": "Изменить",
                 "code": "role:update",
                 "api": "/api/system/role/{role_id}",
                 "method": 2,
@@ -1117,11 +1117,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 24,
                 "remark": "",
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "role:search",
                 "api": "/api/system/role",
                 "method": 0,
@@ -1132,11 +1132,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 25,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "dict:add",
                 "api": "/api/dict/post",
                 "method": 1,
@@ -1147,11 +1147,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 26,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "dict:delete",
                 "api": "/api/system/dict/{dict_id}",
                 "method": 3,
@@ -1162,11 +1162,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 27,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "编辑",
+                "name": "Обновить",
                 "code": "dict:update",
                 "api": "/api/system/dict/{dict_id}",
                 "method": 2,
@@ -1177,11 +1177,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 28,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "dict:search",
                 "api": "/api/system/dict",
                 "method": 0,
@@ -1192,11 +1192,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 29,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "category:add",
                 "api": "/api/system/category_dict",
                 "method": 1,
@@ -1207,11 +1207,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 30,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "category:delete",
                 "api": "/api/system/category_dict/{category_dict_id}",
                 "method": 3,
@@ -1222,11 +1222,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 31,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "name": "编辑",
+                "name": "Обновить",
                 "code": "category:update",
                 "api": "/api/system/category_dict/{category_dict_id}",
                 "method": 2,
@@ -1237,11 +1237,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 32,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "category:search",
                 "api": "/api/system/category_dict",
                 "method": 0,
@@ -1252,11 +1252,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 33,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "新增",
+                "name": "Добавить",
                 "code": "demo:add",
                 "api": "/api/demo/demo",
                 "method": 1,
@@ -1267,11 +1267,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 34,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "删除",
+                "name": "Удалить",
                 "code": "demo:delete",
                 "api": "/api/demo/demo/{demo_id}",
                 "method": 3,
@@ -1282,11 +1282,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 35,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "修改",
+                "name": "Изменить",
                 "code": "demo:update",
                 "api": "/api/demo/demo/{demo_id}",
                 "method": 3,
@@ -1297,11 +1297,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 36,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 4,
-                "name": "查询",
+                "name": "Искать",
                 "code": "demo:search",
                 "api": "/api/demo/demo",
                 "method": 0,
@@ -1310,21 +1310,21 @@ class Initialize(CoreInitialize):
                 "belong_dept": None
             },
         ]
-        self.save(MenuButton, self.menu_button_data, "菜单按钮表")
+        self.save(MenuButton, self.menu_button_data, "Список кнопок меню")
 
     def init_role(self):
         """
-        初始化角色表
+        Таблица ролей
         """
         data = [
             {
                 "id": 1,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "行政人员",
+                "name": "Админ",
                 "code": "official",
                 "status": 1,
                 "admin": 0,
@@ -1335,11 +1335,11 @@ class Initialize(CoreInitialize):
             {
                 "id": 2,
                 "remark": None,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "name": "技术人员",
+                "name": "Тех.спец",
                 "code": "technicist",
                 "status": 1,
                 "admin": 0,
@@ -1348,43 +1348,43 @@ class Initialize(CoreInitialize):
                 "data_range": 4
             },
         ]
-        self.save(Role, data, "角色表")
+        self.save(Role, data, "Список персонала")
 
     def init_dict(self):
         """
-        初始化字典
+        Инициализация словаря
         """
         data = [
             {
                 "id": 1,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "name": "项目状态",
+                "name": "Статус проекта",
                 "code": "project_status",
                 "status": 1,
                 "remark": None,
                 "creator_id": 1
             },
         ]
-        self.save(Dict, data, "数据字典", no_reset=True)
+        self.save(Dict, data, "словарь данных", no_reset=True)
 
     def init_dict_item(self):
         """
-        初始化字典项目
+        Инициализация элементов словаря
         """
         data = [
             {
                 "id": 1,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 2,
-                "label": "未建",
-                "value": "未建",
+                "label": "не построенный",
+                "value": "не построенный",
                 "status": 1,
                 "remark": None,
                 "creator_id": 1,
@@ -1392,13 +1392,13 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 2,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 1,
-                "label": "在建",
-                "value": "在建",
+                "label": "строящийся",
+                "value": "строящийся",
                 "status": 1,
                 "remark": None,
                 "creator_id": 1,
@@ -1406,24 +1406,24 @@ class Initialize(CoreInitialize):
             },
             {
                 "id": 3,
-                "modifier": "超级管理员",
+                "modifier": "Супер-администратор",
                 "belong_dept": None,
                 "update_datetime": datetime.datetime.now(),
                 "create_datetime": datetime.datetime.now(),
                 "sort": 3,
-                "label": "竣工",
-                "value": "竣工",
+                "label": "завершить проект",
+                "value": "завершить проект",
                 "status": 1,
                 "remark": None,
                 "creator_id": 1,
                 "dict_id": 1
             },
         ]
-        self.save(DictItem, data, "字典项目", no_reset=True)
+        self.save(DictItem, data, "Проекты", no_reset=True)
 
     def init_users(self):
         """
-        初始化用户表
+        Инициализация таблицы пользователей
         """
         data = [
             {
@@ -1444,7 +1444,7 @@ class Initialize(CoreInitialize):
                 "username": "superadmin",
                 "email": "",
                 "mobile": None,
-                "name": "超级管理员",
+                "name": "Супер-администратор",
                 "gender": 1,
                 "user_type": 0,
                 "dept_id": None,
@@ -1481,7 +1481,7 @@ class Initialize(CoreInitialize):
                 "creator_id": None
             }
         ]
-        self.save(Users, data, "用户表", no_reset=True)
+        self.save(Users, data, "Список пользователей", no_reset=True)
 
     def run(self):
         self.init_dept()

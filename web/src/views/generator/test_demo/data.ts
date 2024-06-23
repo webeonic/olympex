@@ -1,22 +1,21 @@
-
 import { BasicColumn } from '/@/components/Table';
 import { FormSchema } from '/@/components/Table';
 export const columns: BasicColumn[] = [
     
   {
-    title: '描述',
+    title: 'Описание',
     dataIndex: 'des',
     width: '80',
   },
 
   {
-    title: '编码',
+    title: 'Код',
     dataIndex: 'code',
     width: '80',
   },
 
   {
-    title: '名称',
+    title: 'Название',
     dataIndex: 'name',
     width: '80',
   },
@@ -25,14 +24,14 @@ export const columns: BasicColumn[] = [
 export const searchFormSchema: FormSchema[] = [
         
   {
-    label: '名称',
+    label: 'Название',
     field: 'name',
     component: 'Input',
     colProps: { span: 6 },
   },
 
   {
-    label: '编码',
+    label: 'Код',
     field: 'code',
     component: 'Input',
     colProps: { span: 6 },
@@ -49,7 +48,7 @@ export const formSchema: FormSchema[] = [
 
   {
     component: 'Input',
-    label: '名称',
+    label: 'Название',
     colProps: {
       span: 24
     },
@@ -58,7 +57,7 @@ export const formSchema: FormSchema[] = [
 
   {
     component: 'InputNumber',
-    label: '编码',
+    label: 'Код',
     colProps: {
       span: 24
     },
@@ -67,7 +66,7 @@ export const formSchema: FormSchema[] = [
 
   {
     component: 'InputTextArea',
-    label: '描述',
+    label: 'Описание',
     colProps: {
       span: 24
     },

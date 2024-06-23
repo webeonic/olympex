@@ -19,23 +19,6 @@
           >
             {{ t('common.delText') }}
           </a-button>
-          <!--          <BasicUpload-->
-          <!--            :maxSize="20"-->
-          <!--            :maxNumber="1"-->
-          <!--            @change="handleChange"-->
-          <!--            class="my-5"-->
-          <!--            type="warning"-->
-          <!--            :text="t('common.importText')"-->
-          <!--            v-auth="['demo:update']"-->
-          <!--          />-->
-          <!--          <a-button-->
-          <!--            type="success"-->
-          <!--            v-auth="['demo:update']"-->
-          <!--            preIcon="carbon:cloud-download"-->
-          <!--            @click="handleExportData"-->
-          <!--          >-->
-          <!--            {{ t('common.exportText') }}-->
-          <!--          </a-button>-->
         </Space>
       </template>
       <template #bodyCell="{ column, record }">
@@ -49,28 +32,17 @@
                 auth: ['demo:update'],
                 onClick: handleEdit.bind(null, record),
               },
-              // {
-              //   icon: 'ant-design:delete-outlined',
-              //   type: 'button',
-              //   color: 'error',
-              //   placement: 'left',
-              //   auth: ['demo:delete'],
-              //   popConfirm: {
-              //     title: t('common.delHintText'),
-              //     confirm: handleDelete.bind(null, record.id),
-              //   },
-              // },
               {
                 type: 'button',
                 icon: 'ant-design:export-outlined',
                 color: 'success',
                 auth: ['demo:update'],
-                tooltip: '导出代码',
+                tooltip: 'Экспорт кода',
                 popConfirm: {
                   title:
-                    '自动生成菜单和导出前后端代码\n' +
-                    '前端路径为: /views/generator\n' +
-                    '后端路径为: /generator',
+                    'Автоматическое создание меню и экспорт кода для фронтенда и бэкенда\n' +
+                    'Фронтенд-путь: /views/generator\n' +
+                    'Бэкенд-путь: /generator',
                   confirm: exportCode.bind(null, record.id),
                 },
               },
@@ -79,9 +51,9 @@
                 icon: 'ant-design:caret-right-outlined',
                 color: 'warning',
                 auth: ['demo:update'],
-                tooltip: '创建数据库',
+                tooltip: 'Создать базу данных',
                 popConfirm: {
-                  title: '自动创建数据库的表结构',
+                  title: 'Автоматическое создание схемы таблиц в базе данных',
                   confirm: createDB.bind(null, record.id),
                 },
               },
@@ -189,13 +161,13 @@
       async function handleChange(list: string[]) {
         console.log(list[0]);
         await importData({ path: list[0] });
-        message.success(`导入成功`);
+        message.success(`Импорт выполнен успешно`);
         await reload();
       }
 
       async function handleExportData() {
         const response = await exportData();
-        await downloadByData(response.data, '项目数据.xlsx');
+        await downloadByData(response.data, 'Данные проекта.xlsx');
       }
 
       function handleSuccess() {

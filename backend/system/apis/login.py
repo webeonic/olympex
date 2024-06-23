@@ -77,7 +77,7 @@ def login(request, data: LoginSchema):
         save_login_log(request=request)
         return data
     else:
-        return FuResponse(code=500, msg="账号/密码错误")
+        return FuResponse(code=500, msg="Неправильная учетная запись/пароль")
 
 
 @router.get("/logout", auth=None)
@@ -85,7 +85,7 @@ def get_post(request):
     # 删除缓存
     user_info = get_user_info_from_token(request)
     # cache.delete(user_info['id'])
-    return FuResponse(msg="注销成功")
+    return FuResponse(msg="Успешная отмена")
 
 
 @router.get("/userinfo", response=SchemaOut)

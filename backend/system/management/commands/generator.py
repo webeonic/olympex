@@ -12,10 +12,10 @@ logger = logging.getLogger(__name__)
 
 class Command(BaseCommand):
     """
-    创建App命令:
-    python manage.py createapp app名
-    python manage.py createapp app01 app02 ...
-    python manage.py createapp 一级文件名/app01 ...    # 支持多级目录建app
+    Команда для создания приложения:
+    python manage.py createapp имя_приложения
+    python manage.py createapp приложение01 приложение02 ...
+    python manage.py createapp имя_файла_верхнего_уровня/приложение01 ...    # Поддерживает создание приложений в многоуровневых каталогах
     """
 
     def add_arguments(self, parser):
@@ -29,31 +29,31 @@ class Command(BaseCommand):
             names = name.split('/')
             dnames = ".".join(names)
             app_path = os.path.join(BASE_DIR, "dvadmin", *names)
-            # 判断app是否存在
+            # Проверить, существует ли приложение
             if os.path.exists(app_path):
-                print(f"App {name} 已存在！")
+                print(f"Приложение {name} уже существует!")
                 # break
             else:
                 source_path = os.path.join(BASE_DIR, "dvadmin", "utils", "template")
                 target_path = app_path
                 if not os.path.exists(target_path):
-                    # 如果目标路径不存在原文件夹的话就创建
+                    # Если целевой путь не содержит исходную папку, создать ее
                     os.makedirs(target_path)
                 if os.path.exists(source_path):
-                    # 如果目标路径存在原文件夹的话就先删除
+                    # Если целевой путь содержит исходную папку, сначала удалить ее
                     shutil.rmtree(target_path)
                 shutil.copytree(source_path, target_path)
-                # 注册app到 settings.py 中
+                # Зарегистрировать приложение в settings.py
                 injection(os.path.join(BASE_DIR, "application", "settings.py"), f"    'dvadmin.{dnames}',\n",
                           "INSTALLED_APPS",
                           "]")
 
-                # 注册app到 urls.py 中
+                # Зарегистрировать приложение в urls.py
                 injection(os.path.join(BASE_DIR, "application", "urls.py"),
                           f"    path(r'api/{name}/', include('dvadmin.{dnames}.urls')),\n", "urlpatterns = [",
                           "]")
 
-            # 修改app中的apps 内容
+            # Изменить содержимое apps в приложении
             app_content = f"""
 from django.apps import AppConfig
 
@@ -65,17 +65,16 @@ class {name.capitalize()}Config(AppConfig):
             with open(os.path.join(app_path, "apps.py"), 'w', encoding='UTF-8') as f:
                 f.write(app_content)
 
-            # 修改Model的内容
-
+            # Изменить содержимое Model
             table_name = app.get('table_name')
             model_name = app.get('model_name')
 
-            # app中所有不重复的字段
+            # Все не повторяющиеся поля в приложении
             app_fields = app.get('fields')
             field_content = ''
-            # app中所有不重复的字段type
+            # Все не повторяющиеся типы полей в приложении
             fields_type = set()
-            # app中所有的字段name
+            # Все имена полей в приложении
             fields_name = set()
             for field in app_fields:
                 fields_type.add(field['type'])
@@ -105,13 +104,13 @@ class {model_name}(CoreModel):
             with open(os.path.join(app_path, "models", f"{table_name}.py"), 'w', encoding='UTF-8') as f:
                 f.write(model_content)
 
-            # 修改 model init文件
+            # Изменить файл init модели
             model_init_content = f"from dvadmin.{name}.models.{table_name} import {model_name}"
             with open(os.path.join(app_path, "models", "__init__.py"), 'a', encoding='UTF-8') as f:
                 f.write(model_init_content)
                 f.write('\n')
 
-            # 修改filters的内容
+            # Изменить содержимое filters
             filter_content = f"""
 import django_filters
 from dvadmin.{name}.models import {model_name}
@@ -119,7 +118,7 @@ from dvadmin.{name}.models import {model_name}
 
 class {model_name}Filter(django_filters.rest_framework.FilterSet):
 
-    # 通过 lookup_expr 可进行模糊查询，其他配置可自行百度
+    # С помощью lookup_expr можно выполнять нечеткий поиск, другие конфигурации можно найти самостоятельно в Google
     # name = django_filters.CharFilter(lookup_expr='icontains')
 
     class Meta:
@@ -130,13 +129,13 @@ class {model_name}Filter(django_filters.rest_framework.FilterSet):
             with open(os.path.join(app_path, "filters", f"{table_name}_filter.py"), 'w', encoding='UTF-8') as f:
                 f.write(filter_content)
 
-            # 修改 filters init文件
+            # Изменить файл init filters
             filter_init_content = f"from .{table_name}_filter import {model_name}Filter"
             with open(os.path.join(app_path, "filters", "__init__.py"), 'a', encoding='UTF-8') as f:
                 f.write(filter_init_content)
                 f.write('\n')
 
-            # 修改serializers的内容
+            # Изменить содержимое serializers
             serializer_content = f"""
 from rest_framework import serializers
 from dvadmin.{name}.models import {model_name}
@@ -152,7 +151,7 @@ class {model_name}Serializer(CustomModelSerializer):
         
 class {model_name}CreateUpdateSerializer(CustomModelSerializer):
 
-    # 此处可写定制的 创建/更新 内容
+    # Здесь можно написать настраиваемое создание/обновление
     def validate(self, attrs: dict):
         return super().validate(attrs)
 
@@ -178,7 +177,7 @@ class {model_name}ExportSerializer(CustomModelSerializer):
             with open(os.path.join(app_path, 'serializers', f'{table_name}_serializer.py'), 'w', encoding='UTF-8') as f:
                 f.write(serializer_content)
 
-            # 修改 serializers init文件
+            # Изменить файл init serializers
             serializer_init_content = f"from .{table_name}_serializer import {model_name}Serializer, " \
                                       f"{model_name}CreateUpdateSerializer, " \
                                       f"{model_name}ImportSerializer, " \
@@ -186,7 +185,7 @@ class {model_name}ExportSerializer(CustomModelSerializer):
             with open(os.path.join(app_path, "serializers", "__init__.py"), 'a', encoding='UTF-8') as f:
                 f.write(serializer_init_content)
                 f.write('\n')
-            # 修改view内容
+            # Изменить содержимое view
             view_content = f"""
 from dvadmin.utils.filters import DataLevelPermissionsFilter
 from dvadmin.utils.viewset import CustomModelViewSet
@@ -198,16 +197,16 @@ from dvadmin.{name}.serializers import {model_name}Serializer, {model_name}Creat
 class {model_name}ModelViewSet(CustomModelViewSet):
 
     queryset = {model_name}.objects.all()
-    serializer_class = {model_name}Serializer  # 序列化器
-    create_serializer_class = {model_name}CreateUpdateSerializer  # 创建/更新时的列化器
-    update_serializer_class = {model_name}CreateUpdateSerializer  # 创建/更新时的列化器
-    filter_class = {model_name}Filter  # 过滤器
-    extra_filter_backends = [DataLevelPermissionsFilter]  # 数据权限类，不需要可注释掉
-    # ordering = ['create_datetime']  # 默认排序
-    # 导出
-    export_field_data = []  # 导出
-    export_serializer_class = {model_name}ExportSerializer  # 导出序列化器
-    # 导入
+    serializer_class = {model_name}Serializer  # Сериализатор
+    create_serializer_class = {model_name}CreateUpdateSerializer  # Сериализатор при создании/обновлении
+    update_serializer_class = {model_name}CreateUpdateSerializer  # Сериализатор при создании/обновлении
+    filter_class = {model_name}Filter  # Фильтр
+    extra_filter_backends = [DataLevelPermissionsFilter]  # Класс прав доступа к данным, можно закомментировать, если он не нужен
+    # ordering = ['create_datetime']  # Сортировка по умолчанию
+    # Экспорт
+    export_field_data = []  # Экспорт
+    export_serializer_class = {model_name}ExportSerializer  # Сериализатор для экспорта
+    # Импорт
     import_field_data = []
     import_serializer_class = {model_name}ImportSerializer
 
@@ -216,13 +215,13 @@ class {model_name}ModelViewSet(CustomModelViewSet):
             with open(os.path.join(app_path, 'views', f'{table_name}_view.py'), 'w', encoding='UTF-8') as f:
                 f.write(view_content)
 
-            # 修改 views init文件
+            # Изменить файл init views
             view_init_content = f"from .{table_name}_view import {model_name}ModelViewSet"
             with open(os.path.join(app_path, "views", "__init__.py"), 'a', encoding='UTF-8') as f:
                 f.write(view_init_content)
                 f.write('\n')
 
-            # 修改 url文件
+            # Изменить файл url
             url_package = f"from dvadmin.{name}.views import {model_name}ModelViewSet"
             injection(os.path.join(app_path, "urls.py"),
                       f"{url_package}\n", "from rest_framework.routers import DefaultRouter",
@@ -233,14 +232,14 @@ class {model_name}ModelViewSet(CustomModelViewSet):
                       f"{url_path}\n", "router = DefaultRouter()",
                       "urlpatterns = [")
 
-            export_import_url = f"""    # 导出项目
+            export_import_url = f"""    # Экспорт проекта
     path('{table_name}/export/', {model_name}ModelViewSet.as_view({{'get': 'export', }})),
-    # 项目导入模板下载及导入
+    # Шаблон импорта проекта для скачивания и импорта
     path('{table_name}/importTemplate/', {model_name}ModelViewSet.as_view({{'get': 'importTemplate', 'post': 'importTemplate'}}))"""
             injection(os.path.join(app_path, "urls.py"),
                       f"{export_import_url}\n", "urlpatterns = [", "]")
 
-            print(f"创建 {name} App成功")
+            print(f"Приложение {name} создано успешно")
 
 
 def injection(file_path, insert_content, startswith, endswith):
@@ -250,11 +249,11 @@ def injection(file_path, insert_content, startswith, endswith):
             is_INSTALLED_APPS = False
             is_insert = False
             for content in data:
-                # 判断文件是否 INSTALLED_APPS 开头
+                # Проверить, начинается ли файл с INSTALLED_APPS
                 if not is_insert and content.startswith(startswith):
                     is_INSTALLED_APPS = True
                 if not is_insert and content.startswith(endswith) and is_INSTALLED_APPS:
-                    # 给前一行插入数据
+                    # Вставить данные в предыдущую строку
                     content = insert_content + content
                     is_insert = True
                 f1.writelines(content)

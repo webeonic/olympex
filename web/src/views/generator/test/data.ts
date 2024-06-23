@@ -4,7 +4,7 @@ import { FormSchema } from '/@/components/Table';
 export const columns: BasicColumn[] = [
     
   {
-    title: '输入框',
+    title: 'Поле ввода',
     dataIndex: 'input_1',
     width: '80',
     fixed: '',
@@ -14,7 +14,7 @@ export const columns: BasicColumn[] = [
   },
 
   {
-    title: '文本域',
+    title: 'Текстовое поле',
     dataIndex: 'input_text_area_2',
     width: '80',
     fixed: '',
@@ -24,7 +24,7 @@ export const columns: BasicColumn[] = [
   },
 
   {
-    title: '下拉选择',
+    title: 'Выпадающий список',
     dataIndex: 'select_3',
     width: '80',
     fixed: '',
@@ -37,21 +37,21 @@ export const columns: BasicColumn[] = [
 export const searchFormSchema: FormSchema[] = [
         
   {
-    label: '输入框',
+    label: 'Поле ввода',
     field: 'input_1',
     component: 'Input',
     colProps: { span: 6 },
   },
 
   {
-    label: '文本域',
+    label: 'Текстовое поле',
     field: 'input_text_area_2',
     component: 'Input',
     colProps: { span: 6 },
   },
 
   {
-    label: '下拉选择',
+    label: 'Выпадающий список',
     field: 'select_3',
     component: 'Input',
     colProps: { span: 6 },
@@ -67,7 +67,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     component: 'Input',
-    label: '输入框',
+    label: 'Поле ввода',
     field: 'input_1',
     colProps: {
       span: 24
@@ -79,7 +79,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     component: 'InputTextArea',
-    label: '文本域',
+    label: 'Текстовое поле',
     field: 'input_text_area_2',
     colProps: {
       span: 24
@@ -89,7 +89,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     component: 'Select',
-    label: '下拉选择',
+    label: 'Выпадающий список',
     field: 'select_3',
     colProps: {
       span: 24
@@ -97,11 +97,11 @@ export const formSchema: FormSchema[] = [
     componentProps: {
       options: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1'
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2'
         }
       ]

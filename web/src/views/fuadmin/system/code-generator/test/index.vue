@@ -159,13 +159,13 @@ export default defineComponent({
     async function handleChange(list: string[]) {
       console.log(list[0]);
       // await importData({ path: list[0] });
-      message.success(`导入成功`);
+      message.success(`Импорт выполнен успешно`); // "导入成功" - "Импорт выполнен успешно"  более  точный  и  понятный  перевод  в  русском  языке
       await reload();
     }
 
     async function handleExportData() {
       // const response = await exportData();
-      await downloadByData(response.data, "项目数据.xlsx");
+      await downloadByData(response.data, "Данные проекта.xlsx"); // "项目数据.xlsx" - "Данные проекта.xlsx"  более  точный  и  понятный  перевод  в  русском  языке
     }
 
     function handleSuccess() {

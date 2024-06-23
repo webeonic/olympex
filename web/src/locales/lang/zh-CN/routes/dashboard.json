@@ -1,6 +1,6 @@
 {
-  "dashboard": "Dashboard",
-  "about": "关于",
-  "workbench": "工作台",
-  "analysis": "分析页"
+  "dashboard": "Панель мониторинга",
+  "about": "О проекте",
+  "workbench": "Рабочая область",
+  "analysis": "Страница анализа"
 }

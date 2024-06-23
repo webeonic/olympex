@@ -1,22 +1,21 @@
-
 import { BasicColumn } from '/@/components/Table';
 import { FormSchema } from '/@/components/Table';
 export const columns: BasicColumn[] = [
     
   {
-    title: '输入框',
+    title: 'Поле ввода',
     dataIndex: 'input_1',
     width: '80',
   },
 
   {
-    title: '数字输入框',
+    title: 'Числовое поле ввода',
     dataIndex: 'input_number_2',
     width: '80',
   },
 
   {
-    title: '下拉选择',
+    title: 'Выпадающий список',
     dataIndex: 'select_1',
     width: '80',
   },
@@ -25,21 +24,21 @@ export const columns: BasicColumn[] = [
 export const searchFormSchema: FormSchema[] = [
         
   {
-    label: '输入框',
+    label: 'Поле ввода',
     field: 'input_1',
     component: 'Input',
     colProps: { span: 6 },
   },
 
   {
-    label: '数字输入框',
+    label: 'Числовое поле ввода',
     field: 'input_number_2',
     component: 'Input',
     colProps: { span: 6 },
   },
 
   {
-    label: '下拉选择',
+    label: 'Выпадающий список',
     field: 'select_1',
     component: 'Input',
     colProps: { span: 6 },
@@ -55,7 +54,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     component: 'Input',
-    label: '输入框',
+    label: 'Поле ввода',
     field: 'input_1',
     colProps: {
       span: 24
@@ -67,7 +66,7 @@ export const formSchema: FormSchema[] = [
       labelCol: {},
       wrapperCol: {},
       required: true,
-      message: '给对方发的'
+      message: 'Отправлено'
     },
     rules: [
       {
@@ -170,7 +169,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     component: 'InputNumber',
-    label: '数字输入框',
+    label: 'Числовое поле ввода',
     field: 'input_number_2',
     colProps: {
       span: 24
@@ -187,7 +186,7 @@ export const formSchema: FormSchema[] = [
   },
   {
     component: 'Select',
-    label: '下拉选择',
+    label: 'Выпадающий список',
     field: 'select_1',
     colProps: {
       span: 24
@@ -195,11 +194,11 @@ export const formSchema: FormSchema[] = [
     componentProps: {
       options: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1'
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2'
         }
       ],
@@ -211,7 +210,7 @@ export const formSchema: FormSchema[] = [
         span: 24
       },
       required: false,
-      message: '哥哥发'
+      message: 'Отправлено'
     },
     rules: [
       {

@@ -19,7 +19,7 @@
           <BasicHelp
             placement="top"
             class="mx-1"
-            text="输入获取数据的api，例如项目演示中的GET api：/api/demo/demo"
+            text="Введите API для получения данных, например, GET API из демонстрационного проекта: /api/demo/demo"
           />
         </template>
       </a-input>
@@ -96,7 +96,7 @@
           fixed: undefined,
         },
       });
-      const getTitle = '快速导入';
+      const getTitle = 'Быстрый импорт'; // "快速导入" -  "Быстрый импорт"  более  распространен  в  русском  языке
 
       async function loadField() {
         buttonLoading.value = true;

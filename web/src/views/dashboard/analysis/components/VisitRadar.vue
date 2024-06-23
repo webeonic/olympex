@@ -1,5 +1,5 @@
 <template>
-  <Card title="转化率" :loading="loading">
+  <Card title="Конверсия" :loading="loading">
     <div ref="chartRef" :style="{ width, height }"></div>
   </Card>
 </template>
@@ -31,7 +31,7 @@
       setOptions({
         legend: {
           bottom: 0,
-          data: ['访问', '购买'],
+          data: ['Посещения', 'Покупки'], // Перевод '访问' и '购买'
         },
         tooltip: {},
         radar: {
@@ -39,22 +39,22 @@
           splitNumber: 8,
           indicator: [
             {
-              name: '电脑',
+              name: 'Компьютер',
             },
             {
-              name: '充电器',
+              name: 'Зарядное устройство',
             },
             {
-              name: '耳机',
+              name: 'Наушники',
             },
             {
-              name: '手机',
+              name: 'Смартфон',
             },
             {
-              name: 'Ipad',
+              name: 'iPad',
             },
             {
-              name: '耳机',
+              name: 'Наушники',
             },
           ],
         },
@@ -72,14 +72,14 @@
             data: [
               {
                 value: [90, 50, 86, 40, 50, 20],
-                name: '访问',
+                name: 'Посещения', // Перевод '访问'
                 itemStyle: {
                   color: '#b6a2de',
                 },
               },
               {
                 value: [70, 75, 70, 76, 20, 85],
-                name: '购买',
+                name: 'Покупки', // Перевод '购买'
                 itemStyle: {
                   color: '#5ab1ef',
                 },

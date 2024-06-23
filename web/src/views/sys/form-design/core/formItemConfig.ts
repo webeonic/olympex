@@ -1,5 +1,5 @@
 /**
- * @description：表单配置
+ * @description：Конфигурация формы
  */
 import { IVFormComponent } from '../typings/v-form-component';
 import { isArray } from 'lodash-es';
@@ -11,16 +11,16 @@ import { Component } from 'vue';
 
 const componentMap = new Map<string, Component>();
 
-//如果有其它控件，可以在这里初始化
+// Если есть другие элементы управления, их можно инициализировать здесь
 
-//注册Ant控件库
+// Регистрация библиотек элементов управления Ant
 Cmp.forEach((value, key) => {
   componentMap.set(key, value);
   if (VbenCmp[key] == null) {
     add(key as ComponentType, value);
   }
 });
-//注册vben控件库
+// Регистрация библиотек элементов управления Vben
 VbenCmp.forEach((value, key) => {
   componentMap.set(key, value);
 });
@@ -28,7 +28,7 @@ VbenCmp.forEach((value, key) => {
 export { componentMap };
 
 /**
- * 设置自定义表单控件
+ * Настройка пользовательских элементов управления формой
  * @param {IVFormComponent | IVFormComponent[]} config
  */
 export function setFormDesignComponents(config: IVFormComponent | IVFormComponent[]) {
@@ -45,16 +45,16 @@ export function setFormDesignComponents(config: IVFormComponent | IVFormComponen
   }
 }
 
-//外部设置的自定义控件
+// Пользовательские элементы управления, установленные снаружи
 export const customComponents: IVFormComponent[] = [];
 
-// 左侧控件列表与初始化的控件属性
-// props.slotName,会在formitem级别生成一个slot,并绑定当前record值
-// 属性props，类型为对象，不能为undefined或是null。
+// Список элементов управления слева и их начальные атрибуты
+// props.slotName, генерирует слот на уровне formitem и связывает его с текущим значением record
+// Атрибут props, тип - объект, не может быть undefined или null.
 export const baseComponents: IVFormComponent[] = [
   // {
   //   component: 'InputCountDown',
-  //   label: '倒计时输入',
+  //   label: 'Ввод обратного отсчета',
   //   icon: 'line-md:iconify2',
   //   colProps: { span: 24 },
   //   field: '',
@@ -62,7 +62,7 @@ export const baseComponents: IVFormComponent[] = [
   // },
   {
     component: 'Input',
-    label: '输入框',
+    label: 'Поле ввода',
     icon: 'bi:input-cursor-text',
     field: '',
     colProps: { span: 24 },
@@ -72,7 +72,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'InputNumber',
-    label: '数字输入框',
+    label: 'Числовое поле ввода',
     icon: 'ant-design:field-number-outlined',
     field: '',
     colProps: { span: 24 },
@@ -80,7 +80,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'InputTextArea',
-    label: '文本域',
+    label: 'Текстовое поле',
     icon: 'ant-design:file-text-filled',
     field: '',
     colProps: { span: 24 },
@@ -88,18 +88,18 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'CheckboxGroup',
-    label: '复选框-组',
+    label: 'Группа флажков',
     icon: 'ant-design:check-circle-filled',
     field: '',
     colProps: { span: 24 },
     componentProps: {
       options: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1',
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2',
         },
       ],
@@ -108,18 +108,18 @@ export const baseComponents: IVFormComponent[] = [
 
   {
     component: 'Select',
-    label: '下拉选择',
+    label: 'Выпадающий список',
     icon: 'gg:select',
     field: '',
     colProps: { span: 24 },
     componentProps: {
       options: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1',
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2',
         },
       ],
@@ -127,7 +127,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'IconPicker',
-    label: '图标选择器',
+    label: 'Выбор иконки',
     icon: 'line-md:iconify2',
     colProps: { span: 24 },
     field: '',
@@ -135,7 +135,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'StrengthMeter',
-    label: '密码强度',
+    label: 'Прочность пароля',
     icon: 'wpf:password1',
     colProps: { span: 24 },
     field: '',
@@ -143,27 +143,27 @@ export const baseComponents: IVFormComponent[] = [
   },
   // {
   //   component: 'AutoComplete',
-  //   label: '自动完成',
+  //   label: 'Автозаполнение',
   //   icon: 'wpf:password1',
   //   colProps: { span: 24 },
   //   field: '',
   //   componentProps: {
-  //     placeholder: '请输入正则表达式',
+  //     placeholder: 'Введите регулярное выражение',
   //     options: [
   //       {
   //         value: '/^(?:(?:\\+|00)86)?1[3-9]\\d{9}$/',
-  //         label: '手机号码',
+  //         label: 'Номер мобильного телефона',
   //       },
   //       {
   //         value: '/^((ht|f)tps?:\\/\\/)?[\\w-]+(\\.[\\w-]+)+:\\d{1,5}\\/?$/',
-  //         label: '网址带端口号',
+  //         label: 'URL-адрес с номером порта',
   //       },
   //     ],
   //   },
   // },
   {
     component: 'Divider',
-    label: '分割线',
+    label: 'Разделитель',
     icon: 'radix-icons:divider-horizontal',
     colProps: { span: 24 },
     field: '',
@@ -174,7 +174,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   // {
   //   component: 'Checkbox',
-  //   label: '复选框',
+  //   label: 'Флажок',
   //   icon: 'ant-design:check-circle-outlined',
   //   colProps: { span: 24 },
   //   field: '',
@@ -182,7 +182,7 @@ export const baseComponents: IVFormComponent[] = [
 
   // {
   //   component: 'Radio',
-  //   label: '单选框',
+  //   label: 'Радиокнопка',
   //   icon: 'ant-design:check-circle-outlined',
   //   field: '',
   //   colProps: { span: 24 },
@@ -190,18 +190,18 @@ export const baseComponents: IVFormComponent[] = [
   // },
   {
     component: 'RadioGroup',
-    label: '单选框-组',
+    label: 'Группа радиокнопок',
     icon: 'carbon:radio-button-checked',
     field: '',
     colProps: { span: 24 },
     componentProps: {
       options: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1',
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2',
         },
       ],
@@ -209,7 +209,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'DatePicker',
-    label: '日期选择',
+    label: 'Выбор даты',
     icon: 'healthicons:i-schedule-school-date-time-outline',
     field: '',
     colProps: { span: 24 },
@@ -217,27 +217,27 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'RangePicker',
-    label: '日期范围',
+    label: 'Диапазон дат',
     icon: 'healthicons:i-schedule-school-date-time-outline',
     field: '',
     colProps: { span: 24 },
     componentProps: {
-      placeholder: ['开始日期', '结束日期'],
+      placeholder: ['Начальная дата', 'Конечная дата'],
     },
   },
   {
     component: 'MonthPicker',
-    label: '月份选择',
+    label: 'Выбор месяца',
     icon: 'healthicons:i-schedule-school-date-time-outline',
     field: '',
     colProps: { span: 24 },
     componentProps: {
-      placeholder: '请选择月份',
+      placeholder: 'Выберите месяц',
     },
   },
   {
     component: 'TimePicker',
-    label: '时间选择',
+    label: 'Выбор времени',
     icon: 'healthicons:i-schedule-school-date-time',
     field: '',
     colProps: { span: 24 },
@@ -245,7 +245,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'Slider',
-    label: '滑动输入条',
+    label: 'Ползунок',
     icon: 'vaadin:slider',
     field: '',
     colProps: { span: 24 },
@@ -253,7 +253,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'Rate',
-    label: '评分',
+    label: 'Рейтинг',
     icon: 'ic:outline-star-rate',
     field: '',
     colProps: { span: 24 },
@@ -261,7 +261,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'Switch',
-    label: '开关',
+    label: 'Переключатель',
     icon: 'entypo:switch',
     field: '',
     colProps: { span: 24 },
@@ -269,24 +269,24 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'TreeSelect',
-    label: '树形选择',
+    label: 'Дерево выбора',
     icon: 'clarity:tree-view-line',
     field: '',
     colProps: { span: 24 },
     componentProps: {
       treeData: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1',
           children: [
             {
-              label: '选项三',
+              label: 'Вариант 3',
               value: '1-1',
             },
           ],
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2',
         },
       ],
@@ -294,7 +294,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'Upload',
-    label: '上传',
+    label: 'Загрузка',
     icon: 'ant-design:upload-outlined',
     field: '',
     colProps: { span: 24 },
@@ -304,24 +304,24 @@ export const baseComponents: IVFormComponent[] = [
   },
   {
     component: 'Cascader',
-    label: '级联选择',
+    label: 'Каскадный выбор',
     icon: 'ant-design:check-outlined',
     field: '',
     colProps: { span: 24 },
     componentProps: {
       options: [
         {
-          label: '选项1',
+          label: 'Вариант 1',
           value: '1',
           children: [
             {
-              label: '选项三',
+              label: 'Вариант 3',
               value: '1-1',
             },
           ],
         },
         {
-          label: '选项2',
+          label: 'Вариант 2',
           value: '2',
         },
       ],
@@ -329,7 +329,7 @@ export const baseComponents: IVFormComponent[] = [
   },
   // {
   //   component: 'Button',
-  //   label: '按钮',
+  //   label: 'Кнопка',
   //   icon: 'dashicons:button',
   //   field: '',
   //   colProps: { span: 24 },
@@ -338,7 +338,7 @@ export const baseComponents: IVFormComponent[] = [
   // },
   // {
   //   component: 'ColorPicker',
-  //   label: '颜色选择器',
+  //   label: 'Выбор цвета',
   //   icon: 'carbon:color-palette',
   //   field: '',
   //   colProps: { span: 24 },
@@ -350,7 +350,7 @@ export const baseComponents: IVFormComponent[] = [
 
   {
     component: 'slot',
-    label: '插槽',
+    label: 'Слот',
     icon: 'vs:timeslot-question',
     field: '',
     colProps: { span: 24 },
@@ -363,7 +363,7 @@ export const baseComponents: IVFormComponent[] = [
 // https://next.antdv.com/components/transfer-cn
 const transferControl = {
   component: 'Transfer',
-  label: '穿梭框',
+  label: 'Перемещение',
   icon: 'bx:bx-transfer-alt',
   field: '',
   colProps: { span: 24 },
@@ -372,8 +372,8 @@ const transferControl = {
     dataSource: [
       {
         key: 'key-1',
-        title: '标题1',
-        description: '描述',
+        title: 'Заголовок 1',
+        description: 'Описание',
         disabled: false,
         chosen: true,
       },
@@ -385,8 +385,8 @@ const transferControl = {
       },
       {
         key: 'key-3',
-        title: '标题3',
-        description: '描述3',
+        title: 'Заголовок 3',
+        description: 'Описание 3',
         disabled: false,
         chosen: true,
       },
@@ -400,7 +400,7 @@ export const layoutComponents: IVFormComponent[] = [
   {
     field: '',
     component: 'Grid',
-    label: '栅格布局',
+    label: 'Сетка',
     icon: 'icon-grid',
     componentProps: {},
     columns: [
