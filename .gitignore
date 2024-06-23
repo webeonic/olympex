@@ -5,4 +5,5 @@
 
 .history/
 .vscode/
-.venv/
+
+.venv
