@@ -19,7 +19,7 @@
           checkStrictly
           :defaultExpandAll="true"
           show-icon
-          title="菜单权限"
+          title="Разрешения"
           toolbar
           @select="onTreeNodeSelect"
         />
@@ -27,7 +27,7 @@
 
       <Col :span="12">
         <div class="vben-tree-header flex px-2 py-1.5 items-center">
-          <span class="vben-basic-title" data-v-606afdb4="">数据权限</span>
+          <span class="vben-basic-title" data-v-606afdb4="">Привелегии</span>
         </div>
         <BasicForm style="padding-top: 16px" @register="registerForm" />
       </Col>

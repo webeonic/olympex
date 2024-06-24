@@ -6,7 +6,7 @@
     v-model:value="checkTreeData"
     checkable
     show-icon
-    title="按钮权限"
+    title="Управление кнопками"
     :selectable = false
     toolbar
     @check="check"

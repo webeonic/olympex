@@ -11,15 +11,15 @@
           :rules="rules"
           ref="formRef"
         >
-          <FormItem label="模板名称" name="template_name">
+          <FormItem label="Имя шаблона" name="template_name">
             <Input v-model:value="formData.template_name" />
           </FormItem>
 
-          <FormItem label="模板编码" name="template_code">
+          <FormItem label="Код" name="template_code">
             <Input v-model:value="formData.template_code" />
           </FormItem>
 
-          <FormItem label="模板说明" name="template_des">
+          <FormItem label="Описание" name="template_des">
             <a-textarea v-model:value="formData.template_des" />
           </FormItem>
         </Form>
@@ -62,7 +62,7 @@
         // 验证规则：只能输入小写字母和下划线，且不能以下划线开头
         const regex = /^(?!_)[a-z_]+$/;
         if (!regex.test(value)) {
-          return Promise.reject(new Error('只能输入小写字母和下划线，且不能以下划线开头'));
+          return Promise.reject(new Error('Можно вводить только строчные буквы и символы подчеркивания, и они не могут начинаться с символа подчеркивания.'));
         }
         return Promise.resolve();
       };
@@ -72,9 +72,9 @@
       });
 
       const rules: Record<string, Rule[]> = {
-        template_name: [{ required: true, message: '请输入模板名称' }],
+        template_name: [{ required: true, message: 'Пожалуйста, введите имя шаблона' }],
         template_code: [
-          { required: true, message: '请输入模板代码' },
+          { required: true, message: 'Пожалуйста, введите код шаблона' },
           { validator: validateLowercaseInput, trigger: 'change' },
         ],
       };

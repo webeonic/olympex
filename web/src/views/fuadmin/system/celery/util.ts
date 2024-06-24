@@ -11,7 +11,7 @@ export function getCrontabData(val) {
   } else if (val.day_of_week !== '*') {
     res = `每${week[val.day_of_week] || val.day_of_week} ${val.hour}点${val.minute}分 `;
   } else if (val.hour !== '*') {
-    res = `每天 ${val.hour}点${val.minute}分`;
+    res = `每День ${val.hour}点${val.minute}分`;
   } else if (val.minute !== '*') {
     res = `每分钟 ${val.minute}秒`;
   } else {

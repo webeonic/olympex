@@ -265,7 +265,7 @@ class Initialize(CoreInitialize):
                 "parent_id": 1,
                 "sort": 4,
                 "icon": "ant-design:project-outlined",
-                "title": "Секторальное управление",
+                "title": "Компании",
                 "permission": None,
                 "is_ext": 0,
                 "type": 1,

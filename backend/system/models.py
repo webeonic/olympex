@@ -18,7 +18,7 @@ class Users(AbstractUser, CoreModel):
     mobile = models.CharField(max_length=255, verbose_name="Телефон", null=True, blank=True, help_text="Телефон")
     avatar = models.TextField(verbose_name="Аватар", null=True, blank=True, help_text="Аватар")
     name = models.CharField(max_length=40, verbose_name="Имя", help_text="Имя")
-    status = models.BooleanField(default=True, verbose_name="Состояние", help_text="Состояние")
+    status = models.BooleanField(default=True, verbose_name="Статус", help_text="Статус")
     GENDER_CHOICES = (
         (0, "Женский"),
         (1, "Мужской"),
@@ -49,13 +49,13 @@ class Users(AbstractUser, CoreModel):
 
 
 class Post(CoreModel):
-    name = models.CharField(null=False, max_length=64, verbose_name="Название должности", help_text="Название должности")
+    name = models.CharField(null=False, max_length=64, verbose_name="Наименование", help_text="Наименование")
     code = models.CharField(max_length=32, verbose_name="Код должности", help_text="Код должности")
     STATUS_CHOICES = (
         (0, "Уволен"),
         (1, "Работает"),
     )
-    status = models.IntegerField(choices=STATUS_CHOICES, default=1, verbose_name="Состояние должности", help_text="Состояние должности")
+    status = models.IntegerField(choices=STATUS_CHOICES, default=1, verbose_name="Статус должности", help_text="Статус должности")
 
     class Meta:
         db_table = "system_post"
@@ -68,7 +68,7 @@ class Role(CoreModel):
     name = models.CharField(max_length=64, verbose_name="Название роли", help_text="Название роли")
     code = models.CharField(max_length=64, unique=True, verbose_name="Код роли", help_text="Код роли")
     # key = models.CharField(max_length=64, unique=True, verbose_name="权限字符", help_text="权限字符")
-    status = models.BooleanField(default=True, verbose_name="Состояние роли", help_text="Состояние роли")
+    status = models.BooleanField(default=True, verbose_name="Статус роли", help_text="Статус роли")
     admin = models.BooleanField(default=False, verbose_name="Является ли администратором", help_text="Является ли администратором")
     DATASCOPE_CHOICES = (
         (0, "Только данные для себя"),
@@ -95,12 +95,12 @@ class Role(CoreModel):
 
 
 class Dept(CoreModel):
-    name = models.CharField(max_length=64, verbose_name="Название отдела", help_text="Название отдела")
+    name = models.CharField(max_length=64, verbose_name="Наименование", help_text="Наименование")
     owner = models.CharField(max_length=32, verbose_name="Ответственный", null=True, blank=True, help_text="Ответственный")
     phone = models.CharField(max_length=32, verbose_name="Контактный телефон", null=True, blank=True, help_text="Контактный телефон")
     email = models.EmailField(max_length=32, verbose_name="Электронная почта", null=True, blank=True, help_text="Электронная почта")
-    status = models.BooleanField(default=True, verbose_name="Состояние отдела", null=True, blank=True,
-                                 help_text="Состояние отдела")
+    status = models.BooleanField(default=True, verbose_name="Статус отдела", null=True, blank=True,
+                                 help_text="Статус отдела")
     parent = models.ForeignKey(to='Dept', on_delete=models.PROTECT, default=None, verbose_name="Родительский отдел",
                                db_constraint=False, null=True, blank=True, help_text="Родительский отдел")
 
@@ -114,7 +114,7 @@ class Dept(CoreModel):
 class Button(CoreModel):
     name = models.CharField(max_length=64, unique=True, verbose_name="Название разрешения", help_text="Название разрешения")
     code = models.CharField(max_length=64, unique=True, verbose_name="Значение разрешения", help_text="Значение разрешения")
-    status = models.BooleanField(default=True, verbose_name="Состояние кнопки", null=True, blank=True, help_text="Состояние кнопки")
+    status = models.BooleanField(default=True, verbose_name="Статус кнопки", null=True, blank=True, help_text="Статус кнопки")
 
     class Meta:
         db_table = "system_button"
@@ -147,7 +147,7 @@ class Menu(CoreModel):
 
     component = models.CharField(max_length=128, verbose_name="Адрес компонента", null=True, blank=True, help_text="Адрес компонента")
     name = models.CharField(max_length=50, verbose_name="Название компонента", null=True, blank=True, help_text="Название компонента")
-    status = models.BooleanField(default=True, blank=True, verbose_name="Состояние меню", help_text="Состояние меню")
+    status = models.BooleanField(default=True, blank=True, verbose_name="Статус меню", help_text="Статус меню")
     keepalive = models.BooleanField(default=False, blank=True, verbose_name="Кэширование страницы", help_text="Кэширование страницы")
     hide_menu = models.BooleanField(default=False, blank=True, verbose_name="Скрыть в боковой панели",
                                     help_text="Скрыть в боковой панели")
@@ -197,7 +197,7 @@ class MenuColumnField(CoreModel):
 class Dict(CoreModel):
     name = models.CharField(max_length=100, blank=True, null=True, verbose_name="Название словаря", help_text="Название словаря")
     code = models.CharField(max_length=100, blank=True, null=True, verbose_name="Кодировка", help_text="Кодировка")
-    status = models.BooleanField(default=True, blank=True, verbose_name="Состояние", help_text="Состояние")
+    status = models.BooleanField(default=True, blank=True, verbose_name="Статус", help_text="Статус")
     remark = models.CharField(max_length=2000, blank=True, null=True, verbose_name="Заметка", help_text="Заметка")
 
     class Meta:
@@ -211,7 +211,7 @@ class DictItem(CoreModel):
     icon = models.CharField(max_length=100, blank=True, null=True, verbose_name="ICON", help_text="ICON")
     label = models.CharField(max_length=100, blank=True, null=True, verbose_name="Отображаемое имя", help_text="Отображаемое имя")
     value = models.CharField(max_length=100, blank=True, null=True, verbose_name="Фактическое значение", help_text="Фактическое значение")
-    status = models.BooleanField(default=True, blank=True, verbose_name="Состояние", help_text="Состояние")
+    status = models.BooleanField(default=True, blank=True, verbose_name="Статус", help_text="Статус")
     dict = models.ForeignKey(to="Dict", db_constraint=False, related_name="dictItem", on_delete=models.CASCADE,
                              help_text="Словарь")
     remark = models.CharField(max_length=2000, blank=True, null=True, verbose_name="Заметка", help_text="Заметка")
@@ -255,7 +255,7 @@ class OperationLog(CoreModel):
                                      help_text="Код состояния ответа")
     request_os = models.CharField(max_length=64, verbose_name="Операционная система", null=True, blank=True, help_text="Операционная система")
     json_result = models.TextField(verbose_name="Возвращаемая информация", null=True, blank=True, help_text="Возвращаемая информация")
-    status = models.BooleanField(default=False, verbose_name="Состояние ответа", help_text="Состояние ответа")
+    status = models.BooleanField(default=False, verbose_name="Статус ответа", help_text="Статус ответа")
 
     class Meta:
         db_table = 'system_operation_log'
@@ -331,7 +331,7 @@ class SystemConfig(CoreModel):
     title = models.CharField(max_length=50, verbose_name="Заголовок", help_text="Заголовок")
     key = models.CharField(max_length=20, verbose_name="Ключ", help_text="Ключ")
     value = models.JSONField(max_length=100, verbose_name="Значение", help_text="Значение", null=True, blank=True)
-    status = models.BooleanField(default=False, verbose_name="Состояние активации", help_text="Состояние активации")
+    status = models.BooleanField(default=False, verbose_name="Статус активации", help_text="Статус активации")
     data_options = models.JSONField(verbose_name="Параметры данных", help_text="Параметры данных", null=True, blank=True)
     FORM_ITEM_TYPE_LIST = (
         (0, 'text'),

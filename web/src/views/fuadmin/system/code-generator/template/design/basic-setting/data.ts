@@ -11,7 +11,7 @@ export const schemas: FormSchema[] = [
   {
     field: 'template_name',
     component: 'Input',
-    label: '模板名称',
+    label: 'Имя шаблона',
     componentProps: {
       // placeholder: '自定义placeholder',
     },
@@ -19,7 +19,7 @@ export const schemas: FormSchema[] = [
   {
     field: 'template_code',
     component: 'Input',
-    label: '模板编码',
+    label: 'Код',
     componentProps: {
       // placeholder: '自定义placeholder',
     },
@@ -28,7 +28,7 @@ export const schemas: FormSchema[] = [
   {
     field: 'template_des',
     component: 'Input',
-    label: '模板说明',
+    label: 'Описание',
     componentProps: {
       // placeholder: '自定义placeholder',
     },

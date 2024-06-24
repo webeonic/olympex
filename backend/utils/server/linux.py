@@ -371,7 +371,7 @@ def GetBootTime():
     days = math.floor(hours / 24)
     hours = math.floor(hours - (days * 24))
     min = math.floor(min - (days * 60 * 24) - (hours * 60))
-    sys_time = "{}天".format(int(days))
+    sys_time = "{}День".format(int(days))
     cache.set(key, sys_time, 1800)
     return sys_time
 

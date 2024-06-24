@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-@author: 猿小天
+@author: 猿小День
 @contact: QQ:1638245306
 @Created on: 2021/5/31 031 22:08
 @Remark: 公共基础model类

@@ -39,7 +39,7 @@ export default {
 
   enableText: 'Включить',
   disableText: 'Отключить',
-  statusText: 'Состояние',
+  statusText: 'Статус',
   sortText: 'Сортировка',
   remarkText: 'Заметка',
   createDateText: 'Дата создания',
@@ -94,9 +94,9 @@ export default {
     actualValueText: 'Фактическое значение',
   },
   dept: {
-    nameText: 'Название отдела',
-    phoneText: 'Телефон отдела',
-    mailText: 'Почта отдела',
+    nameText: 'Наименование',
+    phoneText: 'Телефон ',
+    mailText: 'email',
     parentText: 'Родительский отдел',
   },
   file: {
@@ -134,7 +134,7 @@ export default {
     codeText: 'Код состояния ответа',
     jsonText: 'Возвращаемая информация',
     bodyText: 'Параметры запроса',
-    statusText: 'Состояние ответа',
+    statusText: 'Статус ответа',
   },
   menu: {
     titleText: 'Название меню',
@@ -159,7 +159,7 @@ export default {
     manualRefreshText: 'Ручное обновление',
     startText: 'Запустить',
     stopText: 'Остановить',
-    loadStatusText: 'Состояние нагрузки',
+    loadStatusText: 'Статус нагрузки',
     cpuUtilizationText: 'Использование ЦПУ',
     memoryUtilizationText: 'Использование памяти',
     diskUtilizationText: 'Использование диска',
@@ -183,7 +183,7 @@ export default {
     networkTrafficTrendText: 'Тенденция трафика',
   },
   post: {
-    nameText: 'Название должности',
+    nameText: 'Наименование',
     codeText: 'Код должности',
   },
   role: {
@@ -210,7 +210,7 @@ export default {
     nameText: 'Название',
     intervalText: 'Частота задачи',
     crontabText: 'Расписание задачи',
-    enabledText: 'Состояние задачи',
+    enabledText: 'Статус задачи',
     minuteText: 'Минуты',
     hourText: 'Часы',
     dayOfWeekText: 'День недели',

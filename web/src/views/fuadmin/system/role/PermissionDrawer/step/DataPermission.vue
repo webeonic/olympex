@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="vben-tree-header flex px-2 py-1.5 items-center">
-      <span class="vben-basic-title" data-v-606afdb4="">数据权限</span>
+      <span class="vben-basic-title" data-v-606afdb4="">Привелегии данных</span>
     </div>
     <BasicForm style="padding-top: 16px" @register="registerForm" />
   </div>

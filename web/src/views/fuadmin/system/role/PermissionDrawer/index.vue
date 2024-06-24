@@ -9,8 +9,8 @@
     :showCancelBtn="false"
   >
     <template #insertFooter>
-      <a-button v-if="current > 0" style="margin-left: 8px" @click="prev">上一步</a-button>
-      <a-button v-if="current < 4 - 1" type="primary" @click="next">下一步</a-button>
+      <a-button v-if="current > 0" style="margin-left: 8px" @click="prev">Назад</a-button>
+      <a-button v-if="current < 4 - 1" type="primary" @click="next">Вперед</a-button>
       <a-button v-if="current == 4 - 1" type="primary" :loading="submitLoad" @click="handleSubmit">
         提交
       </a-button>
@@ -18,10 +18,10 @@
 
     <div class="step-form-form" style="padding: 0 35px">
       <a-steps :current="current" >
-        <a-step title="菜单权限" />
-        <a-step title="按钮权限" />
-        <a-step title="列表权限" />
-        <a-step title="数据权限" />
+        <a-step title="Управление меню" />
+        <a-step title="Управление кнопками" />
+        <a-step title="Список разрешений" />
+        <a-step title="Привилегии данных" />
       </a-steps>
     </div>
 

@@ -7,7 +7,7 @@
     :selectable = false
     checkable
     show-icon
-    title="菜单权限"
+    title="Управление меню"
     @check="check"
     checkStrictly
     ref="treeRef"

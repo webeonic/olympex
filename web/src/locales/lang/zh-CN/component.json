@@ -106,7 +106,7 @@
     "legend": "Миниатюра", 
     "fileName": "Имя файла", 
     "fileSize": "Размер файла", 
-    "fileStatue": "Состояние", 
+    "fileStatue": "Статус", 
     "pending": "Ожидание загрузки",
     "startUpload": "Начать загрузку", 
     "uploadSuccess": "Загрузка завершена", 

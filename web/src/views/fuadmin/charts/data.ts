@@ -5,7 +5,7 @@ export const mapData: any = [
     tipData: [Math.round(Math.random() * 1000), Math.round(Math.random() * 1000)],
   },
   {
-    name: '天津',
+    name: 'День津',
     value: Math.round(Math.random() * 1000),
     tipData: [Math.round(Math.random() * 1000), Math.round(Math.random() * 1000)],
   },

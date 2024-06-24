@@ -65,9 +65,9 @@ export default {
     signUpFormTitle: 'Регистрация',
     forgetFormTitle: 'Сброс пароля',
 
-    signInTitle: 'Python Backend Management System',
-    signInDesc: 'Разработано с использованием Django Ninja на бэкенде',
-    policy: 'Я согласен с политикой конфиденциальности xxx',
+    signInTitle: 'Olympex transfer monitor',
+    signInDesc: 'Сервис мониторинга отчетности по трансферному ценообразованию',
+    policy: 'Я согласен с политикой конфиденциальности',
     scanSign: 'Отсканируйте код и нажмите "Подтвердить", чтобы завершить вход',
 
     loginButton: 'Вход',
